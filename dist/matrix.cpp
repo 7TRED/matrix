@@ -63,22 +63,8 @@ Matrix& Matrix::operator=(const Matrix& m)
         return *this;
     }
 
-    if (rows_ != m.rows_ || cols_ != m.cols_) {
-        for (int i = 0; i < rows_; ++i) {
-            delete[] p[i];
-        }
-        delete[] p;
-
-        rows_ = m.rows_;
-        cols_ = m.cols_;
-        allocSpace();
-    }
-
-    for (int i = 0; i < rows_; ++i) {
-        for (int j = 0; j < cols_; ++j) {
-            p[i][j] = m.p[i][j];
-        }
-    }
+    Matrix temp = m;
+    swap(*this, temp);
     return *this;
 }
 
