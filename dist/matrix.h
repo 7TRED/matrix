@@ -27,6 +27,7 @@ class Matrix {
         
         friend std::ostream& operator<<(std::ostream&, const Matrix&);
         friend std::istream& operator>>(std::istream&, Matrix&);
+        friend void swap(Matrix &first, Matrix &second) noexcept;
 
         void swapRows(int, int);
         Matrix transpose();

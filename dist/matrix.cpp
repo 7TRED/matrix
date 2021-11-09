@@ -547,3 +547,13 @@ istream& operator>>(istream& is, Matrix& m)
     }
     return is;
 }
+
+
+void swap(Matrix& first, Matrix& second) noexcept
+{
+    using std::swap;
+
+    swap(first.cols_, second.cols_);
+    swap(first.rows_, second.rows_);
+    swap(first.p, second.p);
+}
